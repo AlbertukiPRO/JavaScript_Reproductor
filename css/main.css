@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+html,body {
+
+}
+
+.container {
+    width: 50%;
+    height: 600px;
+    margin: 0 auto;
+    /** TODO: CAMBIAR PORTADA **/
+    background-image: url("https://images.genius.com/01316d8d59d9d86aa5d06ccb9ae1de33.1000x1000x1.png");
+    background-size: cover;
+}
+
+.container .filtro {
+    background-color: rgba(255,255,255,0.8);
+    width: 100%;
+    height: 600px;
+}
+
+.container .conAbsolut {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    vertical-align: center;
+}
+
+.container .conAbsolut h1 {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container .conAbsolut .portada {
+    background-image: url("https://images.genius.com/01316d8d59d9d86aa5d06ccb9ae1de33.1000x1000x1.png");
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 0 1px #ccc;
+    background-size: contain;
+}
+
+.divBarra {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#controles {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.barra {
+    margin-top: 50px;
+    width: 60%;
+    height: 6px;
+    border-radius: 15px;
+    background-color: #cccccc;
+}
+
+#tiempo {
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+}
+
+.container .conAbsolut #controles .btnControllers {
+    background-image: url("../resources/icons/play.png");
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.btnPrev {
+    background-image: url("../resources/icons/next-button.png");
+    background-size: contain;
+    transform: rotateY(3.142rad);
+    width: 70px;
+    height: 70px;
+}
+
+.btnNext {
+    background-image: url("../resources/icons/next-button.png");
+    background-size: contain;
+    width: 70px;
+    height: 70px;
+}
+
+.contenedorBtn {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    vertical-align: center;
+}
