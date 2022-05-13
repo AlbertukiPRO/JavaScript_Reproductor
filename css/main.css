@@ -27,7 +27,7 @@ html,body {
 
 .container .conAbsolut {
     position: absolute;
-    top: 0;
+    top: 50px;
     width: 50%;
     padding: 15px;
     display: flex;
@@ -82,23 +82,48 @@ html,body {
 .container .conAbsolut #controles .btnControllers {
     background-image: url("../resources/icons/play.png");
     background-size: contain;
+    background-repeat: no-repeat;
     width: 100px;
     height: 100px;
     margin: 0 auto;
+    transition: 0.1s ease-in-out;
+}
+
+.btnControllers:hover,
+.btnNext:hover{
+    transform: scale(1.1);
+    filter: grayscale(100%);
+}
+
+
+.btnControllers:link{
+    filter: blur(50%);
 }
 
 .btnPrev {
     background-image: url("../resources/icons/next-button.png");
     background-size: contain;
+    background-repeat: no-repeat;
     transform: rotateY(3.142rad);
+    margin-top: 10px;
+    margin-right: 10px;
     width: 70px;
     height: 70px;
 }
+
+.btnPrev:hover {
+    transform: rotateY(3.142rad);
+    filter: grayscale(100%);
+}
+
 
 .btnNext {
     background-image: url("../resources/icons/next-button.png");
     background-size: contain;
     width: 70px;
+    margin-top: 10px;
+    margin-left: 10px;
+    background-repeat: no-repeat;
     height: 70px;
 }
 
@@ -109,4 +134,89 @@ html,body {
     flex-wrap: nowrap;
     justify-content: center;
     vertical-align: center;
+}
+
+header {
+    background-color: #001;
+    padding: 10px 25px;
+    color: white;
+    display: flex;
+    justify-content: left;
+}
+
+header h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    margin-left: 35px;
+}
+
+header .btnBack:hover {
+    display: block;
+    cursor: pointer !important;
+    color: darkslategrey;
+}
+
+.grid {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.grid .item {
+    width: 150px;
+    height: 170px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.item .img {
+    height: 90%;
+    width: 100%;
+    border-radius: 0.5rem;
+    background-image: url("https://images.genius.com/01316d8d59d9d86aa5d06ccb9ae1de33.1000x1000x1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.item span {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    color: white;
+    font-size: 50px;
+    box-shadow: 0 0 2em #ccc;
+    clip-path: circle();
+    transition: 0.2s ease-in-out;
+}
+
+.item span:hover {
+    transform: scale(1.1);
+    color: #000011;
+    cursor: pointer;
+}
+
+.item .subtitle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+.subtitle p:nth-child(1){
+    color: #000011;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.subtitle p:nth-child(2) {
+    font-size: 13px;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
 }

@@ -4,33 +4,65 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/genericos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container">
-        <div class="filtro"></div>
-        <!-- TODO: Cambiar titulo-->
-        <div class="conAbsolut">
-            <h1 id="titleSong">Devils Advocate - The Neighbourhood</h1>
-            <div class="portada">
-            </div>
-            <div id="controles">
-                <div class="divBarra">
-                    <div class="barra"></div>
-                    <span id="tiempo">00:00</span>
+    <div class="view1 hide">
+        <header>
+        <div class="btnBack">
+            <span class="material-icons">arrow_back_ios</span>
+        </div>
+        <h4>Canción</h4>
+    </header>
+        <div class="container">
+            <div class="filtro"></div>
+            <!-- TODO: Cambiar titulo-->
+            <div class="conAbsolut">
+                <h1 id="titleSong">Devils Advocate - The Neighbourhood</h1>
+                <div class="portada">
                 </div>
-                <div class="contenedorBtn">
-                    <div class="btnPrev"></div>
-                    <div class="btnControllers" id="play">
+                <div id="controles">
+                    <div class="divBarra">
+                        <div class="barra"></div>
+                        <span id="tiempo">00:00</span>
                     </div>
-                    <div class="btnNext"></div>
+                    <div class="contenedorBtn">
+                        <div class="btnPrev"></div>
+                        <div class="btnControllers" id="play">
+                        </div>
+                        <div class="btnNext"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="listaCanciones">
+        <header>
+            <span class="material-icons">
+            graphic_eq
+            </span>
+            <h4>Reproductor Mapaches</h4>
+        </header>
+       <div class="grid">
+           <a class="item">
+               <div class="img"></div>
+               <span class="medium material-icons">
+                play_circle_filled
+               </span>
+               <div class="subtitle">
+                   <p id="nameAlbum">Album Name</p>
+                   <p id="ncanciones"># canciones en total</p>
+               </div>
+           </a>
+       </div>
+    </div>
+    <script src="js/logica.js"></script>
+    <script src="js/player.js"></script>
 </body>
 </html>
