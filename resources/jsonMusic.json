@@ -1,0 +1,40 @@
+[
+  {
+    "id": "1",
+    "nombre": "Chip Chrome & the Mono-Tones",
+    "artista": "The Neighbourhood",
+    "caratula": "https://images.genius.com/01316d8d59d9d86aa5d06ccb9ae1de33.1000x1000x1.png",
+    "ncanciones": "11",
+    "canciones": [
+      {
+        "idTrack": "1",
+        "trackName": "The Neighbourhood - Devil's Advocate",
+        "source": "../resources/music/The Neighbourhood - Devil's Advocate.mp3"
+      },
+      {
+        "idTrack": "2",
+        "trackName": "Pretty Boy",
+        "source": "../resources/music/The Neighbourhood - Pretty Boy.mp3"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "nombre": "Trench",
+    "artista": "Twenty One Pilots",
+    "caratura": "https",
+    "ncanciones": "10",
+    "canciones": [
+      {
+        "idTrack": "1",
+        "trackName": "Chlorine",
+        "source": "../resources/music/Twenty One Pilots - Chlorine.mp3"
+      },
+      {
+        "idTrack": "2",
+        "trackName": "My Blood",
+        "source": "../resources/music/Twenty One Pilots - My Blood.mp3"
+      }
+    ]
+  }
+]
