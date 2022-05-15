@@ -2,30 +2,28 @@
 initPlayer();
 var indexTrak = 0;
 var isPlay = false;
+var tiempo= 0;
 
 function initPlayer() {
 
     var audio = document.getElementById("audio");
 
      fileJSON = JSON.parse(jsonString); //load data.
-    // audio.src = "../resources/music/The Neighbourhood - Devil's Advocate.mp3";
-    //
-    // audio.load();
-    // audio.play();
 
     //TODO: SHOW load indicator;
     buildInterfaz(fileJSON).then(()=>{
-        document.getElementById("cargador").classList.add("hide");
+        ocultar(document.getElementById("cargador"));
     });
 
     var albums = document.getElementsByClassName("item");
 
     for (let i = 0; i < albums.length; i++) {
         albums[i].addEventListener("click",function () {
+            mostrar(document.querySelector("#cargador"));
             ocultar(document.querySelector(".listaCanciones"));
             mostrar(document.querySelector(".view1"))
             buildTrack(fileJSON[i]['caratula'],fileJSON[i]['nombre'],fileJSON[i]['artista'],fileJSON[i]['canciones']).then(()=>{
-
+                ocultar(document.querySelector("#cargador"));
             });
         });
     }
@@ -38,6 +36,9 @@ async function buildTrack(portada,nombre,artista,canciones) {
         ocultar(document.querySelector(".view1"))
 
         let audio = document.querySelector("#audio");
+        audio.pause();
+
+        location.reload();
     });
 
     let container = document.querySelector(".container");
@@ -54,6 +55,8 @@ async function buildTrack(portada,nombre,artista,canciones) {
     let audio = document.querySelector("#audio");
     audio.src=canciones[indexTrak]['source'];
     audio.load();
+    audio.play();
+    document.querySelector("#nombreCancion").innerHTML = canciones[indexTrak]['trackName'];
 
     document.querySelector(".btnControllers").style.backgroundImage = 'url("../resources/icons/play.png") !important;';
 
@@ -69,11 +72,17 @@ async function buildTrack(portada,nombre,artista,canciones) {
     });
 
     document.querySelector(".btnNext").addEventListener("click", function () {
-       audio.src=canciones[indexTrak+1]['source'];
-       setDuration(canciones[indexTrak+1]['source']);
-       audio.load();
-       audio.play();
+        tiempo=0;
+        indexTrak++;
+        buildTrack(portada,nombre,artista,canciones);
     });
+
+    document.querySelector(".btnPrev").addEventListener("click", function () {
+        indexTrak--;
+        tiempo=0;
+        buildTrack(portada,nombre,artista,canciones);
+    });
+    console.log(indexTrak);
 }
 
 function PlaySong(audio) {
@@ -84,6 +93,17 @@ function PlaySong(audio) {
 function PauseSong(audio) {
     document.querySelector(".btnControllers").style.backgroundImage = 'url("../resources/icons/pause.png") !important;';
     audio.pause();
+}
+function setBarra(length) {
+    let barra = document.querySelector(".subbarra");
+    barra.style.animationName = "nada";
+    barra.style.animationName = "barra";
+    var secons = tiempo*60;
+    barra.style.animationDuration= ''+secons+'s';
+    barra.style.backgroundColor = "#001";
+    barra.style.width = "0";
+    barra.style.height = "100%";
+    barra.style.borderRadius = "15px";
 }
 
 function getDuration(src, cb) {
@@ -97,7 +117,9 @@ function getDuration(src, cb) {
 function setDuration(ruta){
     getDuration(ruta, function(length) {
         console.log('I got length ' + length);
-        document.getElementById("tiempo").textContent = length;
+        tiempo = length/60;
+        setBarra(tiempo);
+        document.getElementById("tiempo").textContent = tiempo.toFixed(2) + " min";
     });
 }
 
