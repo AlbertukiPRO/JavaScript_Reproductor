@@ -23,7 +23,7 @@
             <div class="filtro"></div>
             <!-- TODO: Cambiar titulo-->
             <div class="conAbsolut">
-                <h1 id="titleSong">Devils Advocate - The Neighbourhood</h1>
+                <h1 id="titleSong"></h1>
                 <div class="portada">
                 </div>
                 <div id="controles">
@@ -37,6 +37,7 @@
                         </div>
                         <div class="btnNext"></div>
                     </div>
+                    <audio id="audio"></audio>
                 </div>
             </div>
         </div>
@@ -49,20 +50,17 @@
             </span>
             <h4>Reproductor Mapaches</h4>
         </header>
-       <div class="grid">
-           <a class="item">
-               <div class="img"></div>
-               <span class="medium material-icons">
-                play_circle_filled
-               </span>
-               <div class="subtitle">
-                   <p id="nameAlbum">Album Name</p>
-                   <p id="ncanciones"># canciones en total</p>
-               </div>
-           </a>
+       <div class="grid" id="grid">
        </div>
     </div>
-    <audio id="audio"></audio>
+
+    <div class="loadBox" id="cargador">
+        <img src="resources/icons/loading-gif-png-4.gif" width="50px" alt="load image">
+        <label>Cargando</label>
+    </div>
+
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/jsonLoad.js"></script>
     <script src="js/logica.js"></script>
     <script src="js/player.js"></script>
 </body>

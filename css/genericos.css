@@ -1,7 +1,9 @@
 .hide {
     display: none;
+    transition: 0.2s ease-in-out;
 }
 
 .show {
     display: block;
+    transition: 0.2s ease-in-out;
 }

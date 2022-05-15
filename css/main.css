@@ -11,24 +11,24 @@ html,body {
 }
 
 .container {
-    width: 50%;
-    height: 600px;
+    width: 100%;
+    height: 100vh;
     margin: 0 auto;
     /** TODO: CAMBIAR PORTADA **/
-    background-image: url("https://images.genius.com/01316d8d59d9d86aa5d06ccb9ae1de33.1000x1000x1.png");
     background-size: cover;
 }
 
 .container .filtro {
     background-color: rgba(255,255,255,0.8);
     width: 100%;
-    height: 600px;
+    height: 100%;
 }
 
 .container .conAbsolut {
     position: absolute;
     top: 50px;
-    width: 50%;
+    width: 60%;
+    left: calc(100% - 80%);
     padding: 15px;
     display: flex;
     flex-wrap: wrap;
@@ -67,7 +67,7 @@ html,body {
 
 .barra {
     margin-top: 50px;
-    width: 60%;
+    width: 90%;
     height: 6px;
     border-radius: 15px;
     background-color: #cccccc;
@@ -175,7 +175,7 @@ header .btnBack:hover {
     height: 90%;
     width: 100%;
     border-radius: 0.5rem;
-    background-image: url("https://images.genius.com/01316d8d59d9d86aa5d06ccb9ae1de33.1000x1000x1.png");
+    /*background-image: url("https://images.genius.com/01316d8d59d9d86aa5d06ccb9ae1de33.1000x1000x1.png");*/
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -215,8 +215,32 @@ header .btnBack:hover {
 
 .subtitle p:nth-child(2) {
     font-size: 13px;
+    display: inline-block;
+    width: 100%;
     margin: 0 !important;
     padding: 0 !important;
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
+}
+
+.loadBox {
+    position: absolute;
+    top: 0;
+    background-color: rgba(0,0,0,0.8);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    vertical-align: center;
+    align-items: center;
+}
+
+.loadBox img {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.loadBox label {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
 }
