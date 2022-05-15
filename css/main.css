@@ -7,7 +7,9 @@
 }
 
 html,body {
-
+    max-height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 .container {
@@ -77,10 +79,12 @@ html,body {
     text-align: center;
     width: 100%;
     padding: 15px;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: bold;
 }
 
 .container .conAbsolut #controles .btnControllers {
-    background-image: url("../resources/icons/play.png");
+    background-image: url("../resources/icons/pause.png");
     background-size: contain;
     background-repeat: no-repeat;
     width: 100px;
@@ -243,4 +247,27 @@ header .btnBack:hover {
 .loadBox label {
     color: white;
     font-family: 'Open Sans', sans-serif;
+}
+
+.cancion {
+    background-color: #000011;
+    width: 100%;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cancion span {
+    color: white;
+    font-size: 25px;
+}
+
+.cancion p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-size: 15px;
+    color: white;
 }

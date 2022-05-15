@@ -7,3 +7,12 @@
     display: block;
     transition: 0.2s ease-in-out;
 }
+
+@keyframes barra {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}

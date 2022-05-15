@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Reproductor UATx</title>
+    <link rel="shortcut icon" href="resources/icons/play.png">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/genericos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +29,9 @@
                 </div>
                 <div id="controles">
                     <div class="divBarra">
-                        <div class="barra"></div>
+                        <div class="barra">
+                            <div class="subbarra"></div>
+                        </div>
                         <span id="tiempo">00:00</span>
                     </div>
                     <div class="contenedorBtn">
@@ -40,6 +43,10 @@
                     <audio id="audio"></audio>
                 </div>
             </div>
+        </div>
+        <div class="cancion">
+            <span class="material-icons">graphic_eq</span>
+            <p id="nombreCancion"></p>
         </div>
     </div>
 
