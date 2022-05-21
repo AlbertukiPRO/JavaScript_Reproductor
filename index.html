@@ -6,11 +6,30 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/geniricos.css">
 </head>
 <body>
-
-    <div class="container">
+    <header>
+        <span class="material-icons">
+        graphic_eq
+        </span>
+        <h4>Reproductor Mapaches</h4>
+    </header>
+    <main id="body">
+        <div class="item">
+            <div class="partada"></div>
+            <span class="material-icons">
+            play_circle
+            </span>
+            <div class="dataalumbun">
+                <p id="nameAlumno">Chip Chrome</p>
+                <p id="nCaciones">No. Canciones 3</p>
+            </div>
+        </div>
+    </main>
+    <div class="container hide">
         <div class="filtro"></div>
         <!-- TODO: Cambiar titulo-->
         <div class="conAbsolut">
@@ -32,5 +51,11 @@
         </div>
     </div>
 
+    <div class="boxload">
+        <img src="https://img.pikbest.com/png-images/20190918/cartoon-snail-loading-loading-gif-animation_2734139.png!bw340" alt="">
+    </div>
+
+    <script src="js/jsonFile.js"></script>
+    <script src="js/logica.js"></script>
 </body>
 </html>
