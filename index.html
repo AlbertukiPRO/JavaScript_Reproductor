@@ -11,30 +11,35 @@
     <link rel="stylesheet" href="css/geniricos.css">
 </head>
 <body>
-    <header>
+    <div id="viewAlbum">
+        <header>
         <span class="material-icons">
         graphic_eq
         </span>
-        <h4>Reproductor Mapaches</h4>
-    </header>
-    <main id="body">
-        <div class="item">
-            <div class="partada"></div>
-            <span class="material-icons">
-            play_circle
-            </span>
-            <div class="dataalumbun">
-                <p id="nameAlumno">Chip Chrome</p>
-                <p id="nCaciones">No. Canciones 3</p>
-            </div>
-        </div>
-    </main>
-    <div class="container hide">
+            <h4>Reproductor Mapaches</h4>
+        </header>
+        <main id="body">
+        </main>
+    </div>
+
+
+
+
+
+
+    <div class="viewPlayer">
+        <header>
+        <span class="material-icons" id="back">
+            chevron_left
+        </span>
+            <h4>MP3</h4>
+        </header>
+        <div class="container">
         <div class="filtro"></div>
         <!-- TODO: Cambiar titulo-->
         <div class="conAbsolut">
-            <h1 id="titleSong">Devils Advocate - The Neighbourhood</h1>
-            <div class="portada">
+            <h1 id="titleSong"></h1>
+            <div class="portada" id="changeP">
             </div>
             <div id="controles">
                 <div class="divBarra">
@@ -49,7 +54,12 @@
                 </div>
             </div>
         </div>
+            <div class="nameTrak">
+                <p>Name track</p>
+            </div>
     </div>
+    </div>
+
 
     <div class="boxload">
         <img src="https://img.pikbest.com/png-images/20190918/cartoon-snail-loading-loading-gif-animation_2734139.png!bw340" alt="">

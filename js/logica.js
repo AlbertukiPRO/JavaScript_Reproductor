@@ -1,35 +1,103 @@
 window.onload = async function () {
+    UpdateStyle(document.querySelector(".viewPlayer"),'hide');
 
     await getDatos().then(res => {
         console.log(res);
         getDatos(res);
-        Hide(document.querySelector(".boxload"));
+        UpdateStyle(document.querySelector(".boxload"),'hide');
         buildInterface(res);
     });
+
+
+    document.querySelector("#back").addEventListener("click",function () {
+        UpdateStyle(document.querySelector('.viewPlayer'),'hide');
+        UpdateStyle(document.querySelector('#viewAlbum'),'show');
+    })
 }
 
-function Hide(elemet){
-    elemet.classList.add("hide");
+function UpdateStyle(elemet, type){
+    switch (type) {
+        case 'hide':
+            elemet.classList.remove("show");
+            elemet.classList.add("hide");
+            break;
+        case 'show':
+            elemet.classList.remove("hide");
+            elemet.classList.add("show");
+
+    }
 }
 
 
 function buildInterface(dataMusic){
     const musicaData = dataMusic;
 
-    let body = document.querySelector("#body");
+    const body = document.querySelector("#body");
 
     for (let i = 0; i < musicaData.length; i++) {
 
         var divItem = document.createElement("div");
         divItem.classList.add("item");
 
+
         var divPortada = document.createElement("div");
+        divPortada.setAttribute("class","portada")
         divPortada.style.backgroundImage = "url("+musicaData[i]['caratula']+")";
 
+
+        var spanIcon = document.createElement("span");
+        spanIcon.setAttribute("class","material-icons");
+        spanIcon.innerHTML = "play_circle";
+
+        var divData = document.createElement("div");
+        divData.setAttribute("class","dataalumbun");
+
+        var p1 = document.createElement("p");
+        p1.innerHTML = musicaData[i]['nombre'];
+
+        var p2 = document.createElement("p");
+        p2.innerHTML = "No. Canciones:"+ musicaData[i]['ncanciones'];
+
+        divData.appendChild(p1);
+        divData.appendChild(p2);
+
         divItem.appendChild(divPortada);
+        divPortada.appendChild(spanIcon);
+        divItem.appendChild(divData);
+
         body.appendChild(divItem);
     }
 
+    var listItems = document.querySelectorAll(".item");
+    for (let i = 0; i < listItems.length; i++) {
+        listItems[i].addEventListener("click", function () {
+            let listDataAlbum = [];
+            listDataAlbum.push(dataMusic[i]['nombre']);
+            listDataAlbum.push(dataMusic[i]['artista']);
+            listDataAlbum.push(dataMusic[i]['caratula']);
+            listDataAlbum.push(dataMusic[i]['ncanciones']);
+            listDataAlbum.push(dataMusic[i]['canciones']);
+
+            console.log(listDataAlbum);
+
+            buildPlayer(listDataAlbum);
+        });
+    }
+}
+
+
+function buildPlayer(listadata) {
+
+    UpdateStyle(document.querySelector('#viewAlbum'), 'hide');
+    UpdateStyle(document.querySelector('.viewPlayer'), 'show');
+
+
+    document.querySelector("#titleSong").innerHTML = listadata[0];
+    console.log(listadata[2]);
+
+
+    let portada = document.querySelector("#changeP");
+    portada.style.backgroundImage = 'url('+listadata[2]+')';
 }
 
 async function getDatos(){

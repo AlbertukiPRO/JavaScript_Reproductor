@@ -11,12 +11,11 @@ html,body {
 }
 
 .container {
-    width: 50%;
+    width: 100%;
     height: 600px;
     margin: 0 auto;
     /** TODO: CAMBIAR PORTADA **/
-    background-image: url("https://images.genius.com/01316d8d59d9d86aa5d06ccb9ae1de33.1000x1000x1.png");
-    background-size: cover;
+   background-size: cover;
 }
 
 .container .filtro {
@@ -27,7 +26,8 @@ html,body {
 
 .container .conAbsolut {
     position: absolute;
-    top: 0;
+    top: 10%;
+    left: 20%;
     width: 50%;
     padding: 15px;
     display: flex;
@@ -45,7 +45,6 @@ html,body {
 }
 
 .container .conAbsolut .portada {
-    background-image: url("https://images.genius.com/01316d8d59d9d86aa5d06ccb9ae1de33.1000x1000x1.png");
     width: 250px;
     height: 250px;
     margin: 0 auto;
@@ -67,7 +66,7 @@ html,body {
 
 .barra {
     margin-top: 50px;
-    width: 60%;
+    width: 80%;
     height: 6px;
     border-radius: 15px;
     background-color: #cccccc;
@@ -76,12 +75,14 @@ html,body {
 #tiempo {
     text-align: center;
     width: 100%;
-    padding: 15px;
+    padding: 15px;font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
 }
 
 .container .conAbsolut #controles .btnControllers {
     background-image: url("../resources/icons/play.png");
     background-size: contain;
+    background-repeat: no-repeat;
     width: 100px;
     height: 100px;
     margin: 0 auto;
@@ -90,6 +91,7 @@ html,body {
 .btnPrev {
     background-image: url("../resources/icons/next-button.png");
     background-size: contain;
+    background-repeat: no-repeat;
     transform: rotateY(3.142rad);
     width: 70px;
     height: 70px;
@@ -99,6 +101,7 @@ html,body {
     background-image: url("../resources/icons/next-button.png");
     background-size: contain;
     width: 70px;
+    background-repeat: no-repeat;
     height: 70px;
 }
 
@@ -107,7 +110,7 @@ html,body {
     margin: 0 auto;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: space-between;
     vertical-align: center;
 }
 
@@ -159,7 +162,7 @@ main .item {
     transition: 0.2s;
 }
 
-.item .partada {
+.item .portada {
     width: 100%;
     height: 100%;
     background-image: url("https://images.genius.com/01316d8d59d9d86aa5d06ccb9ae1de33.1000x1000x1.png");;
@@ -199,4 +202,17 @@ main .item {
 .item:hover {
     transform: scale(1.1);
     cursor: pointer;
+}
+
+.nameTrak {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 15px;
+    background-color: #000011;
+}
+
+.nameTrak p {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
 }
