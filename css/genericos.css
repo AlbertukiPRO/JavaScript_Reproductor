@@ -1,0 +1,16 @@
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+@keyframes barra {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}

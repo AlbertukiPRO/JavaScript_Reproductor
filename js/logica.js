@@ -1,3 +1,6 @@
+var index = 0;
+var isPlay = false;
+
 window.onload = async function () {
     UpdateStyle(document.querySelector(".viewPlayer"),'hide');
 
@@ -12,6 +15,7 @@ window.onload = async function () {
     document.querySelector("#back").addEventListener("click",function () {
         UpdateStyle(document.querySelector('.viewPlayer'),'hide');
         UpdateStyle(document.querySelector('#viewAlbum'),'show');
+        location.reload();
     })
 }
 
@@ -85,7 +89,6 @@ function buildInterface(dataMusic){
     }
 }
 
-
 function buildPlayer(listadata) {
 
     UpdateStyle(document.querySelector('#viewAlbum'), 'hide');
@@ -98,6 +101,83 @@ function buildPlayer(listadata) {
 
     let portada = document.querySelector("#changeP");
     portada.style.backgroundImage = 'url('+listadata[2]+')';
+
+    document.querySelector(".container").style.backgroundImage ='url('+listadata[2]+')';
+
+    var player = document.querySelector('#setAudio');
+
+    player.setAttribute("src",listadata[4][0]['source']);
+    player.load();
+
+    document.querySelector('#play').addEventListener("click", function (){
+       if (!isPlay){
+           player.play();
+
+           setDuration(listadata[4][index]['source']);
+
+           isPlay = true// isPlay => false,
+           console.log("Click Play Song");
+       }else{
+           player.pause();
+           isPlay = false;
+           console.log("Click Pause Song");
+       }
+    });
+
+    document.querySelector("#nametrack").innerHTML = listadata[4][index]['trackName'];
+
+    document.querySelector(".btnPrev").addEventListener("click", function (){
+        player.setAttribute("src",listadata[4][index+1]['source']);
+        setDuration(listadata[4][index+1]['source']);
+        player.load();
+        player.play();
+        console.log(listadata[4][index+1]['source']);
+        document.querySelector("#nametrack").innerHTML = listadata[4][index]['trackName'];
+    });
+
+    document.querySelector(".btnNext").addEventListener("click", function (){
+        if (!index==0){ //index => 0 - 1
+            index--;
+        }
+        player.setAttribute("src",listadata[4][index]['source']);
+        setDuration(listadata[4][index]['source']);
+        player.load();
+        player.play();
+        document.querySelector("#nametrack").innerHTML = listadata[4][index]['trackName'];
+    });
+
+
+
+}
+
+function setBarra(length) {
+    let barra = document.querySelector(".subbarra");
+    barra.style.animationName = "barra";
+    var secons = tiempo*60;
+    barra.style.animationDuration= ''+secons+'s';
+    barra.style.backgroundColor = "#001";
+    barra.style.width = "0";
+    barra.style.height = "100%";
+    barra.style.borderRadius = "15px";
+}
+
+
+function setDuration(ruta){
+    getDuration(ruta, function(length) {
+        console.log('I got length ' + length);
+        tiempo = length/60;
+        setBarra(tiempo);
+        document.getElementById("tiempo").textContent = tiempo.toFixed(2) + " min";
+    });
+}
+
+
+function getDuration(src, cb) {
+    var audio = new Audio();
+    $(audio).on("loadedmetadata", function(){
+        cb(audio.duration);
+    });
+    audio.src = src;
 }
 
 async function getDatos(){
